@@ -4,12 +4,8 @@ pipelines:
       - name: docker_build
         type: DockerBuild
         configuration:
-          affinityGroup: dbp_group
+          affinityGroup:
           dockerFileLocation: .
           dockerFileName: Dockerfile
           dockerImageName: kaloula.jfrog-pipelines.com/docker-local/dbp  # replace with your image path and name
-          dockerImageTag: ${run_number}
-          inputResources:
-            - name: dbp_repo
-          integrations:
-            - name: art
+          dockerImageTag: 1
